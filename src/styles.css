@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: rgb(24, 24, 24);
+  width: 150px;
+  height: 1000px;
+}
+
+.style-button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin-bottom: 0px;
+  color: #d6d6d6;
+  cursor: pointer;
+}
+
+.style-button-spaced {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin-bottom: 0px;
+  color: #d6d6d6;
+  cursor: pointer;
+  margin-left: 200px;
+}
+
+.style-button:hover {
+  background-color: grey;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(24, 24, 24);
+  width: 1000px;
+}
+
+.body-div {
+  flex: 1;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  margin-left: 160px;
+  margin-top: -990px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
