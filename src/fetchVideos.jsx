@@ -1,16 +1,15 @@
-import {useEffect} from 'react';
-import {useState} from 'react';
+import {useEffect} from 'react'
+import {useState} from 'react'
+import Header from './Header.jsx'
 
 export default function Videos() {
     const [videos, setVideos] = useState([]);
-
     useEffect(() => {
         const fetchVideos = async() =>{
             try {
-                const query = 'cats';
-                const API_key = 'AIzaSyATalP6JXNSXPMcIICB4Ch7EeL7ZAAGz_g';
+                const API_key = import.meta.env.VITE_APIkey;
                 const API_url = `https://www.googleapis.com/youtube/v3/search?key=${API_key}&part=snippet&q=${query}&type=video`;
-                const response = await fetch(API_url);
+                const response = await fetch(`${API_url}?key=${API_key}&maxResults=28`);
                 const data = await response.json();
                 setVideos(data.items);
             }
@@ -18,8 +17,10 @@ export default function Videos() {
                 console.log(`Error fetching ${query} videos.`, error);
             }  
     };
-    fetchVideos();
-    }, []);
+    if(search) {
+      fetchVideos();
+    }
+    }, [search]);
 
   return (
     <div>

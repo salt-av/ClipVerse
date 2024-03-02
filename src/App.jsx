@@ -4,15 +4,16 @@ import Header from './Header.jsx'
 import SidePanel from './SideBar.jsx'
 
 export default function App() {
+  const [search, setSearch] = useState('');
   return (<>
     <div className="header">
-      <Header />
+      <Header search={search} setSearch={setSearch} />
     </div>
     <div className="side-panel">
       <SidePanel />
     </div>
     <div className="body-div">
-      <Videos />
+      <Videos search={search} />
     </div>
     </>)
 }
